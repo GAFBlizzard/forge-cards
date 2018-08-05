@@ -15,7 +15,7 @@ function initGoogleAPI() {
                      'scope': 'https://www.googleapis.com/auth/spreadsheets.readonly'}).then(function () {
       isGoogleAPIReady = true
    }, function(reason) {
-      converterOutputArea.innerHTML = 'Failed to initialize Google API.'
+      converterOutputArea.innerHTML = 'Failed to initialize Google API:  ' + reason.result.error.message
    })
 }
 
