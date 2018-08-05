@@ -4,4 +4,4 @@
 
 This is a fan project.  No rights infringement is intended.  No money is made.
 
-KeyForge is owned by FFG.
+KeyForge is owned by Fantasy Flight Games.
