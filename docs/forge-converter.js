@@ -11,7 +11,7 @@ function setupConverter() {
 function initGoogleAPI() {
    // Initialize the Google API client library.
    gapi.client.init({'apiKey': 'AIzaSyAnircUPPMsqEMmomdmkZUOnTEFyhkE9qA',
-                     'discoveryDocs': ['https://sheets.googleapis.com/$discovery/rest?version=v4']).then(function () {
+                     'discoveryDocs': ['https://sheets.googleapis.com/$discovery/rest?version=v4']}).then(function () {
       isGoogleAPIReady = true
    }, function(reason) {
       converterOutputArea.innerHTML = 'Failed to initialize Google API:  ' + reason
