@@ -26,14 +26,14 @@ function doConvert() {
       }).then((response) => {
          converterOutputArea.innerHTML = ''
 
-         for (cardIndex = 0; cardIndex < response.result.valueRanges.values.length; cardIndex++)
+         for (cardIndex = 0; cardIndex < response.result.values.length; cardIndex++)
          {
             converterOutputArea.innerHTML += '{ '
-            for (columnIndex = 0; columnIndex < response.result.valueRanges.values[cardIndex].length; columnIndex++)
+            for (columnIndex = 0; columnIndex < response.result.values[cardIndex].length; columnIndex++)
             {
                // TODO NEXT add commas
                // TODO NEXT finish
-               converterOutputArea.innerHTML += (response.result.valueRanges.values[cardIndex][columnIndex] + ' ')
+               converterOutputArea.innerHTML += (response.result.values[cardIndex][columnIndex] + ' ')
             }
             converterOutputArea.innerHTML += '}'
          }
