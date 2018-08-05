@@ -14,9 +14,7 @@ function initGoogleAPI() {
                      'clientId': '928458196088-eqip5j7vces8s7vldntivmqi1mcn3ukq.apps.googleusercontent.com',
                      'scope': 'https://www.googleapis.com/auth/spreadsheets.readonly'}).then(function () {
       isGoogleAPIReady = true
-   }, function(reason) {
-      converterOutputArea.innerHTML = 'Failed to initialize Google API:  ' + reason.result.error.message
-   })
+   });
 }
 
 function doConvert() {
@@ -32,4 +30,5 @@ function doConvert() {
       converterOutputArea.innerHTML = 'Google API was not initialized.'
    }
 } // end function doConvert()
+
 
