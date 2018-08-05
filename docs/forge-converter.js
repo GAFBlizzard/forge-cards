@@ -5,7 +5,7 @@ function setupConverter() {
    isGoogleAPIReady = false
 
    // Load the Google API client library.
-   gapi.load('client', initGoogleAPI);
+   gapi.load('client:auth2', initGoogleAPI);
 }
 
 function initGoogleAPI() {
