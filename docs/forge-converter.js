@@ -78,10 +78,83 @@ function doConvert() {
             if (response.result.values[cardIndex].length >= 11) {
                newInnerHTML += response.result.values[cardIndex][10]
             }
-            newInnerHTML += '",\n      }';
+            newInnerHTML += '"\n      }';
          }
 
          newInnerHTML += '\n   ]\n}\n';
+
+         converterOutputArea.innerHTML = newInnerHTML;
+      });
+   }
+   else {
+      converterOutputArea.innerHTML = 'Google API was not initialized.'
+   }
+}
+
+function doConvertToLua() {
+   if (isGoogleAPIReady) {
+      converterOutputArea.innerHTML = 'Please wait...'
+
+      gapi.client.sheets.spreadsheets.values.get({
+        spreadsheetId: '1BuF4bbXN2teLlAunvpZuFGsVe9lBMcYnaVKv-NTJigo',
+        range: 'Sheet1!A2:K371'
+      }).then((response) => {
+         newInnerHTML = 'cardData = {\n'
+
+         for (cardIndex = 0; cardIndex < response.result.values.length; cardIndex++)
+         {
+            if (cardIndex != 0) {
+               newInnerHTML += ',\n'
+            }
+
+            newInnerHTML += '  { number = "';
+            if (response.result.values[cardIndex].length >= 1) {
+               newInnerHTML += response.result.values[cardIndex][0]
+            }
+            newInnerHTML += '", name = "';
+            if (response.result.values[cardIndex].length >= 2) {
+               newInnerHTML += response.result.values[cardIndex][1]
+            }
+            newInnerHTML += '", house = "';
+            if (response.result.values[cardIndex].length >= 3) {
+               newInnerHTML += response.result.values[cardIndex][2]
+            }
+            newInnerHTML += '", type = "';
+            if (response.result.values[cardIndex].length >= 4) {
+               newInnerHTML += response.result.values[cardIndex][3]
+            }
+            newInnerHTML += '", rarity = "';
+            if (response.result.values[cardIndex].length >= 5) {
+               newInnerHTML += response.result.values[cardIndex][4]
+            }
+            newInnerHTML += '", amber = "';
+            if (response.result.values[cardIndex].length >= 6) {
+               newInnerHTML += response.result.values[cardIndex][5]
+            }
+            newInnerHTML += '", power = "';
+            if (response.result.values[cardIndex].length >= 7) {
+               newInnerHTML += response.result.values[cardIndex][6]
+            }
+            newInnerHTML += '", armor = "';
+            if (response.result.values[cardIndex].length >= 8) {
+               newInnerHTML += response.result.values[cardIndex][7]
+            }
+            newInnerHTML += '", traits = "';
+            if (response.result.values[cardIndex].length >= 9) {
+               newInnerHTML += response.result.values[cardIndex][8]
+            }
+            newInnerHTML += '", keywords = "';
+            if (response.result.values[cardIndex].length >= 10) {
+               newInnerHTML += response.result.values[cardIndex][9]
+            }
+            newInnerHTML += '", text = "';
+            if (response.result.values[cardIndex].length >= 11) {
+               newInnerHTML += response.result.values[cardIndex][10]
+            }
+            newInnerHTML += '" }';
+         }
+
+         newInnerHTML += '\n}\n";
 
          converterOutputArea.innerHTML = newInnerHTML;
       });
