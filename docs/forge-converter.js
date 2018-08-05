@@ -26,23 +26,52 @@ function doConvert() {
         spreadsheetId: '1BuF4bbXN2teLlAunvpZuFGsVe9lBMcYnaVKv-NTJigo',
         range: 'Sheet1!A2:K371'
       }).then((response) => {
-         converterOutputArea.innerHTML = '{\n'
+         converterOutputArea.innerHTML = '{\n   "CardData": [\n'
 
          for (cardIndex = 0; cardIndex < response.result.values.length; cardIndex++)
          {
-            converterOutputArea.innerHTML += '   { '
-            for (columnIndex = 0; columnIndex < response.result.values[cardIndex].length; columnIndex++)
-            {
-               if (columnIndex != 0) {
-                  converterOutputArea.innerHTML += ', '
-               }
-
-               converterOutputArea.innerHTML += ('"' + response.result.values[cardIndex][columnIndex] + '" ')
+            if (cardIndex != 0) {
+               converterOutputArea.innerHTML += ',\n'
             }
-            converterOutputArea.innerHTML += '},\n'
+
+            converterOutputArea.innerHTML += '      { ';
+            converterOutputArea.innerHTML += '         "Number": "';
+            converterOutputArea.innerHTML += response.result.values[cardIndex][0]
+            converterOutputArea.innerHTML += '",\n';
+            converterOutputArea.innerHTML += '         "Name": "';
+            converterOutputArea.innerHTML += response.result.values[cardIndex][1]
+            converterOutputArea.innerHTML += '",\n';
+            converterOutputArea.innerHTML += '         "House": "';
+            converterOutputArea.innerHTML += response.result.values[cardIndex][2]
+            converterOutputArea.innerHTML += '",\n';
+            converterOutputArea.innerHTML += '         "Type": "';
+            converterOutputArea.innerHTML += response.result.values[cardIndex][3]
+            converterOutputArea.innerHTML += '",\n';
+            converterOutputArea.innerHTML += '         "Rarity": "';
+            converterOutputArea.innerHTML += response.result.values[cardIndex][4]
+            converterOutputArea.innerHTML += '",\n';
+            converterOutputArea.innerHTML += '         "Amber": "';
+            converterOutputArea.innerHTML += response.result.values[cardIndex][5]
+            converterOutputArea.innerHTML += '",\n';
+            converterOutputArea.innerHTML += '         "Power": "';
+            converterOutputArea.innerHTML += response.result.values[cardIndex][6]
+            converterOutputArea.innerHTML += '",\n';
+            converterOutputArea.innerHTML += '         "Armor": "';
+            converterOutputArea.innerHTML += response.result.values[cardIndex][7]
+            converterOutputArea.innerHTML += '",\n';
+            converterOutputArea.innerHTML += '         "Traits": "';
+            converterOutputArea.innerHTML += response.result.values[cardIndex][8]
+            converterOutputArea.innerHTML += '",\n';
+            converterOutputArea.innerHTML += '         "Keywords": "';
+            converterOutputArea.innerHTML += response.result.values[cardIndex][9]
+            converterOutputArea.innerHTML += '",\n';
+            converterOutputArea.innerHTML += '         "Text": "';
+            converterOutputArea.innerHTML += response.result.values[cardIndex][10]
+            converterOutputArea.innerHTML += '",\n';
+            converterOutputArea.innerHTML += '      }';
          }
 
-         converterOutputArea.innerHTML += '}'
+         converterOutputArea.innerHTML += '\n   ]\n}\n';
       });
    }
    else {
