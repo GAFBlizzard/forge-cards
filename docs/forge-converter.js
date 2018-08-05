@@ -26,10 +26,10 @@ function doConvert() {
       }).then((response) => {
          converterOutputArea.innerHTML = ''
 
-         for (cardIndex = 0; cardIndex < response.values.length, cardIndex++)
+         for (cardIndex = 0; cardIndex < response.values.length; cardIndex++)
          {
             converterOutputArea.innerHTML += '{ '
-            for (columnIndex = 0; columnIndex < response.values[cardIndex].length, columnIndex++)
+            for (columnIndex = 0; columnIndex < response.values[cardIndex].length; columnIndex++)
             {
                // TODO NEXT add commas
                // TODO NEXT finish
