@@ -24,7 +24,7 @@ function doConvert() {
    if (isGoogleAPIReady) {
       gapi.client.sheets.spreadsheets.values.get({
         spreadsheetId: '1BuF4bbXN2teLlAunvpZuFGsVe9lBMcYnaVKv-NTJigo',
-        range: 'A2:K371'
+        range: 'Sheet1!A2:K371'
       }).then((response) => {
          converterOutputArea.innerHTML = response.values
       });
