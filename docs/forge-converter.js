@@ -154,7 +154,7 @@ function doConvertToLua() {
             newInnerHTML += '" }';
          }
 
-         newInnerHTML += '\n}\n";
+         newInnerHTML += '\n}\n';
 
          converterOutputArea.innerHTML = newInnerHTML;
       });
