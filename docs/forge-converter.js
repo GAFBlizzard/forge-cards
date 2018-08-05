@@ -24,7 +24,19 @@ function doConvert() {
         spreadsheetId: '1BuF4bbXN2teLlAunvpZuFGsVe9lBMcYnaVKv-NTJigo',
         range: 'Sheet1!A2:K371'
       }).then((response) => {
-         converterOutputArea.innerHTML = response.values
+         converterOutputArea.innerHTML = ''
+
+         for (cardIndex = 0; cardIndex < response.values.length, cardIndex++)
+         {
+            converterOutputArea.innerHTML += '{ '
+            for (columnIndex = 0; columnIndex < response.values[cardIndex].length, columnIndex++)
+            {
+               // TODO NEXT add commas
+               // TODO NEXT finish
+               converterOutputArea.innerHTML += (response.values[cardIndex][columnIndex] + ' ')
+            }
+            converterOutputArea.innerHTML += '}'
+         }
       });
    }
    else {
