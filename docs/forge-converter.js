@@ -20,11 +20,13 @@ function initGoogleAPI() {
 
 function doConvert() {
    if (isGoogleAPIReady) {
+      converterOutputArea.innerHTML = 'Please wait...'
+
       gapi.client.sheets.spreadsheets.values.get({
         spreadsheetId: '1BuF4bbXN2teLlAunvpZuFGsVe9lBMcYnaVKv-NTJigo',
         range: 'Sheet1!A2:K371'
       }).then((response) => {
-         converterOutputArea.innerHTML = ''
+         converterOutputArea.innerHTML = '{'
 
          for (cardIndex = 0; cardIndex < response.result.values.length; cardIndex++)
          {
@@ -39,6 +41,8 @@ function doConvert() {
             }
             converterOutputArea.innerHTML += '}\n'
          }
+
+         converterOutputArea.innerHTML += '}'
       });
    }
    else {
