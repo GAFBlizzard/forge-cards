@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <title>
+    Forge card spreadsheet Lua converter
+  </title>
+  <script defer src="https://apis.google.com/js/api.js"></script>
+  <script defer src="forge-converter.js"></script>
+</head>
+<body onload="setupConverter()">
+  This is a fan project. No rights infringement is intended. No money is made.<br/>
+  <br/>
+  KeyForge is owned by Fantasy Flight Games.<br/>
+  <br/>
+  This converter uses data from <a href="https://docs.google.com/spreadsheets/d/1WjIUAbedu062U6_pi__G2bNWmhggfxJaq-ixft4o6rs" target="_blank">this spreadsheet</a>.<br/>
+  <br/>
+  <button onclick="doConvertToLua()">Convert data to LUA</button><br/>
+  <br/>
+  <textarea id="converterOutput" readonly rows=40 cols=80>(output will go here)</textarea><br/>
+</body>
+</html>
+
