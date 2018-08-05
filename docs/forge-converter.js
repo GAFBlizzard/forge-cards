@@ -5,15 +5,13 @@ function setupConverter() {
    isGoogleAPIReady = false
 
    // Load the Google API client library.
-   gapi.load('client:auth2', initGoogleAPI);
+   gapi.load('client', initGoogleAPI);
 }
 
 function initGoogleAPI() {
    // Initialize the Google API client library.
    gapi.client.init({'apiKey': 'AIzaSyAnircUPPMsqEMmomdmkZUOnTEFyhkE9qA',
-                     'discoveryDocs': ['https://sheets.googleapis.com/$discovery/rest?version=v4'],
-                     'clientId': '928458196088-t993q1qavldumq7rurmco4qt52ta9aon.apps.googleusercontent.com',
-                     'scope': 'https://www.googleapis.com/auth/spreadsheets.readonly'}).then(function () {
+                     'discoveryDocs': ['https://sheets.googleapis.com/$discovery/rest?version=v4']).then(function () {
       isGoogleAPIReady = true
    }, function(reason) {
       converterOutputArea.innerHTML = 'Failed to initialize Google API:  ' + reason
