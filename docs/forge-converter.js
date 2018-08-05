@@ -31,11 +31,13 @@ function doConvert() {
             converterOutputArea.innerHTML += '{ '
             for (columnIndex = 0; columnIndex < response.result.values[cardIndex].length; columnIndex++)
             {
-               // TODO NEXT add commas
-               // TODO NEXT finish
-               converterOutputArea.innerHTML += (response.result.values[cardIndex][columnIndex] + ' ')
+               if (columnIndex != 0) {
+                  converterOutputArea.innerHTML += ', '
+               }
+
+               converterOutputArea.innerHTML += ('"' + response.result.values[cardIndex][columnIndex] + '" ')
             }
-            converterOutputArea.innerHTML += '}'
+            converterOutputArea.innerHTML += '}\n'
          }
       });
    }
