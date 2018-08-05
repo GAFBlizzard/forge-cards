@@ -48,6 +48,6 @@ function doConvert() {
    else {
       converterOutputArea.innerHTML = 'Google API was not initialized.'
    }
-} // end function doConvert()
+}
 
 
