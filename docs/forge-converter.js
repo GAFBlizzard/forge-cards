@@ -18,6 +18,26 @@ function initGoogleAPI() {
    });
 }
 
+function setupAndGetJson(holderID) {
+   converterOutputArea = document.getElementById(holderID)
+
+   isGoogleAPIReady = false
+
+   // Load the Google API client library.
+   gapi.load('client', initGoogleAPIAndConvert);
+}
+
+function initGoogleAPIAndConvert() {
+   // Initialize the Google API client library.
+   gapi.client.init({'apiKey': 'AIzaSyAnircUPPMsqEMmomdmkZUOnTEFyhkE9qA',
+                     'discoveryDocs': ['https://sheets.googleapis.com/$discovery/rest?version=v4']}).then(function () {
+      isGoogleAPIReady = true
+      doConvert(converterOutputArea.id)
+   }, function(reason) {
+      converterOutputArea.innerHTML = 'Failed to initialize Google API:  ' + reason
+   });
+}
+
 function doConvert(holderID) {
    localConverterOutputArea = document.getElementById(holderID)
 
