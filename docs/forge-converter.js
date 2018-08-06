@@ -96,7 +96,7 @@ function doConvertToLua() {
       converterOutputArea.innerHTML = 'Please wait...'
 
       gapi.client.sheets.spreadsheets.values.get({
-        spreadsheetId: '1BuF4bbXN2teLlAunvpZuFGsVe9lBMcYnaVKv-NTJigo',
+        spreadsheetId: '1WjIUAbedu062U6_pi__G2bNWmhggfxJaq-ixft4o6rs',
         range: 'Sheet1!A2:K371'
       }).then((response) => {
          newInnerHTML = 'cardData = {\n'
