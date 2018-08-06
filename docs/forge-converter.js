@@ -56,47 +56,47 @@ function doConvert(holderID) {
                newInnerHTML += ',\n'
             }
 
-            newInnerHTML += '      {\n         "Number": "';
+            newInnerHTML += '      {\n         "number": "';
             if (response.result.values[cardIndex].length >= 1) {
                newInnerHTML += response.result.values[cardIndex][0]
             }
-            newInnerHTML += '",\n         "Name": "';
+            newInnerHTML += '",\n         "name": "';
             if (response.result.values[cardIndex].length >= 2) {
                newInnerHTML += response.result.values[cardIndex][1]
             }
-            newInnerHTML += '",\n         "House": "';
+            newInnerHTML += '",\n         "house": "';
             if (response.result.values[cardIndex].length >= 3) {
                newInnerHTML += response.result.values[cardIndex][2]
             }
-            newInnerHTML += '",\n         "Type": "';
+            newInnerHTML += '",\n         "type": "';
             if (response.result.values[cardIndex].length >= 4) {
                newInnerHTML += response.result.values[cardIndex][3]
             }
-            newInnerHTML += '",\n         "Rarity": "';
+            newInnerHTML += '",\n         "rarity": "';
             if (response.result.values[cardIndex].length >= 5) {
                newInnerHTML += response.result.values[cardIndex][4]
             }
-            newInnerHTML += '",\n         "Amber": "';
+            newInnerHTML += '",\n         "amber": "';
             if (response.result.values[cardIndex].length >= 6) {
                newInnerHTML += response.result.values[cardIndex][5]
             }
-            newInnerHTML += '",\n         "Power": "';
+            newInnerHTML += '",\n         "power": "';
             if (response.result.values[cardIndex].length >= 7) {
                newInnerHTML += response.result.values[cardIndex][6]
             }
-            newInnerHTML += '",\n         "Armor": "';
+            newInnerHTML += '",\n         "armor": "';
             if (response.result.values[cardIndex].length >= 8) {
                newInnerHTML += response.result.values[cardIndex][7]
             }
-            newInnerHTML += '",\n         "Traits": "';
+            newInnerHTML += '",\n         "traits": "';
             if (response.result.values[cardIndex].length >= 9) {
                newInnerHTML += response.result.values[cardIndex][8]
             }
-            newInnerHTML += '",\n         "Keywords": "';
+            newInnerHTML += '",\n         "keywords": "';
             if (response.result.values[cardIndex].length >= 10) {
                newInnerHTML += response.result.values[cardIndex][9]
             }
-            newInnerHTML += '",\n         "Text": "';
+            newInnerHTML += '",\n         "text": "';
             if (response.result.values[cardIndex].length >= 11) {
                newInnerHTML += response.result.values[cardIndex][10]
             }
