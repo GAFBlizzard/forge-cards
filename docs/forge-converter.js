@@ -62,7 +62,7 @@ function doConvert(holderID) {
             }
             newInnerHTML += '",\n         "name": "';
             if (response.result.values[cardIndex].length >= 2) {
-               newInnerHTML += response.result.values[cardIndex][1]
+               newInnerHTML += response.result.values[cardIndex][1].replace("\"", "\\\"")
             }
             newInnerHTML += '",\n         "house": "';
             if (response.result.values[cardIndex].length >= 3) {
@@ -98,7 +98,7 @@ function doConvert(holderID) {
             }
             newInnerHTML += '",\n         "text": "';
             if (response.result.values[cardIndex].length >= 11) {
-               newInnerHTML += response.result.values[cardIndex][10]
+               newInnerHTML += response.result.values[cardIndex][10].replace("\"", "\\\"")
             }
             newInnerHTML += '"\n      }';
          }
