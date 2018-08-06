@@ -18,9 +18,11 @@ function initGoogleAPI() {
    });
 }
 
-function doConvert() {
+function doConvert(holderID) {
+   localConverterOutputArea = document.getElementById(holderID)
+
    if (isGoogleAPIReady) {
-      converterOutputArea.innerHTML = 'Please wait...'
+      localConverterOutputArea.innerHTML = 'Please wait...'
 
       gapi.client.sheets.spreadsheets.values.get({
         spreadsheetId: '1WjIUAbedu062U6_pi__G2bNWmhggfxJaq-ixft4o6rs',
@@ -83,11 +85,11 @@ function doConvert() {
 
          newInnerHTML += '\n   ]\n}\n';
 
-         converterOutputArea.innerHTML = newInnerHTML;
+         localConverterOutputArea.innerHTML = newInnerHTML;
       });
    }
    else {
-      converterOutputArea.innerHTML = 'Google API was not initialized.'
+      localConverterOutputArea.innerHTML = 'Google API was not initialized.'
    }
 }
 
