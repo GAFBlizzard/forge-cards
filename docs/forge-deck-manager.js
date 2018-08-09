@@ -324,7 +324,7 @@ function addDeckFull() {
 
                // Success.
                addDeckResultArea.innerHTML = '<b><font color="#00AA00">Success.</font></b>';
-               scriptOutputArea.innerHTML = + deckID '~' + deckName + '~' + factionString + "~" + outputAString + "~" + outputBString + "~" + outputCString + "~" + deckDescription;
+               scriptOutputArea.innerHTML = deckID + '~' + deckName + '~' + factionString + "~" + outputAString + "~" + outputBString + "~" + outputCString + "~" + deckDescription;
             }
          }
          else {
