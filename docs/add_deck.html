@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <title>
+    Add Deck
+  </title>
+  <script defer src="https://apis.google.com/js/api.js"></script>
+  <script defer src="forge-deck-manager.js"></script>
+</head>
+<body onload="setupScripts()">
+  This is a fan project. No rights infringement is intended. No money is made. KeyForge is owned by Fantasy Flight Games. Richard Garfield is cool, and you should buy some real life decks.<br/>
+  <br/>
+  <br/>
+  <a href="known_deck_names.html">View known deck names</a><br/>
+  <br/>
+  <h2>Add New Deck</h2><br/>
+  ID:
+  <input id="deckID" placeholder="?????-?????-?????" size="34"/><br/>
+  Name:
+  <input id="deckName" placeholder="Deck Name" size="50"/><br/><br/>
+  <button id="checkDeckButton" disabled onclick="checkIfDeckExists(false)">Check if deck was already recorded</button>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <span id="deckRecordedResult"></span><br/><br/>
+  <p>
+    Faction 1:&nbsp;&nbsp;
+    <select id="factionA">
+      <option value="B">Brobnar</option>
+      <option value="L">Logos</option>
+      <option value="H">Shadows</option>
+      <option value="S">Sanctum</option>
+      <option value="M">Mars</option>
+      <option value="D">Dis</option>
+      <option value="U">Untamed</option>
+    </select><br/><br/>
+    Comma-separated card numbers:<br/>
+    <input id="factionACards" placeholder="1, 8, 10, ..., 50" size="50"/><br/><br/><br/>
+    Faction 2:&nbsp;&nbsp;
+    <select id="factionB">
+      <option value="B">Brobnar</option>
+      <option value="L">Logos</option>
+      <option value="H">Shadows</option>
+      <option value="S">Sanctum</option>
+      <option value="M">Mars</option>
+      <option value="D">Dis</option>
+      <option value="U">Untamed</option>
+    </select><br/><br/>
+    Comma-separated card numbers:<br/>
+    <input id="factionBCards" placeholder="64, 67, 67, ..., 104" size="50"/><br/><br/><br/>
+    Faction 2:&nbsp;&nbsp;
+    <select id="factionC">
+      <option value="B">Brobnar</option>
+      <option value="L">Logos</option>
+      <option value="H">Shadows</option>
+      <option value="S">Sanctum</option>
+      <option value="M">Mars</option>
+      <option value="D">Dis</option>
+      <option value="U">Untamed</option>
+    </select><br/><br/>
+    Comma-separated card numbers:<br/>
+    <input id="factionCCards" placeholder="109, 114, 123, ..., 148" size="50"/><br/><br/><br/>
+    Description (may be as simple as "Discord" or, more usefully, include image/video URL(s):<br/>
+    <input id="deckDescription" placeholder="Deck Description" size="100"/><br/><br/><br/>
+    <button id="addDeckButton" disabled onclick="addDeck()">Add deck</button>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <span id="addDeckResult"></span><br/><br/>
+  </p>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <b>Privacy Note:</b><br/>
+  <br/>
+  Only the ID, name, faction, and card information is saved.<br/>
+  No personally identifiable information is recorded.<br/>
+</body>
+</html>
+
