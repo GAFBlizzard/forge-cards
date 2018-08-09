@@ -7,6 +7,7 @@ function setupScripts() {
    deckIDInput = document.getElementById("deckID");
    deckNameInput = document.getElementById("deckName");
    deckDescriptionInput = document.getElementById("deckDescription");
+   scriptOutputArea = document.getElementById("scriptOutput");
 
    isGoogleAPIReady = false;
 
@@ -17,15 +18,13 @@ function setupScripts() {
 function initGoogleAPI() {
    // Initialize the Google API client library.
    gapi.client.init({'apiKey': 'AIzaSyBG5VmU_QlYEGXIcCKSuEY68Cuwl-PA86Y',
-                     'clientId': ' 604620817850-4md1q6qesq5ap8bk4mffu6fgprdjnkkn.apps.googleusercontent.com',
-                     'discoveryDocs': ['https://sheets.googleapis.com/$discovery/rest?version=v4'],
-                     'scope': 'https://www.googleapis.com/auth/spreadsheets'}).then(function () {
+                     'discoveryDocs': ['https://sheets.googleapis.com/$discovery/rest?version=v4']}).then(function () {
       isGoogleAPIReady = true;
 
       setButtonsEnabled(true);
    }, function(reason) {
       deckRecordedResultArea.innerHTML = 'Failed to initialize Google API:  ' + reason;
-      console.error("%O", reason); // TODO NEXT REMOVE
+      console.error("%O", reason);
    });
 }
 
@@ -188,7 +187,7 @@ function addDeckFull() {
       if ((factionA != factionB)    &&
           (factionA != factionC)    &&
           (factionB != factionC)) {
-         factionString = factionA + '~' + factionB + '~' + factionC;
+         factionString = factionA + ',' + factionB + ',' + factionC;
       }
       else {
          newInnerHTML = '<b><font color="#ff0000">All 3 factions must be different.</font></b>';
@@ -231,7 +230,7 @@ function addDeckFull() {
 
                      if ((cardANumbers[cardIndex] >= 1) && (cardANumbers[cardIndex] <= 370)) {
                         if (cardIndex > 0) {
-                           outputAString += '~';
+                           outputAString += ',';
                         }
 
                         outputAString += cardANumbers[cardIndex];
@@ -257,10 +256,10 @@ function addDeckFull() {
 
                      if ((cardBNumbers[cardIndex] >= 1) && (cardBNumbers[cardIndex] <= 370)) {
                         if (cardIndex > 0) {
-                           outputAString += '~';
+                           outputBString += ',';
                         }
 
-                        outputAString += cardBNumbers[cardIndex];
+                        outputBString += cardBNumbers[cardIndex];
                      }
                      else {
                         newInnerHTML = '<b><font color="#ff0000">Invalid card number "' + cardBNumbers[cardIndex] + '".</font></b>';
@@ -283,10 +282,10 @@ function addDeckFull() {
 
                      if ((cardCNumbers[cardIndex] >= 1) && (cardCNumbers[cardIndex] <= 370)) {
                         if (cardIndex > 0) {
-                           outputAString += '~';
+                           outputCString += ',';
                         }
 
-                        outputAString += cardCNumbers[cardIndex];
+                        outputCString += cardCNumbers[cardIndex];
                      }
                      else {
                         newInnerHTML = '<b><font color="#ff0000">Invalid card number "' + cardCNumbers[cardIndex] + '".</font></b>';
@@ -304,6 +303,7 @@ function addDeckFull() {
 
             if (successful) {
 // TODO NEXT IMPLEMENT
+/*
                gapi.client.sheets.spreadsheets.values.append({
                  spreadsheetId: '12E3C5bTjFKJaKISshQEBYRTRkSw26f6n0S1M4Qayk5w',
                  range: 'Sheet1!A:B',
@@ -316,6 +316,10 @@ function addDeckFull() {
                   // Success.
                   addDeckResultArea.innerHTML = '<b><font color="#00AA00">Deck successfully recorded.</font></b>';
                });
+*/
+               // Success.
+               addDeckResultArea.innerHTML = '<b><font color="#00AA00">Success.</font></b>';
+               scriptOutputArea.innerHTML = deckName + '~' + factionString + "~" + outputAString + "~" + outputBString + "~" + outputCString + "~" + deckDescription;
             }
          }
          else {
