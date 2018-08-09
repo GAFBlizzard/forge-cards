@@ -317,9 +317,14 @@ function addDeckFull() {
                   addDeckResultArea.innerHTML = '<b><font color="#00AA00">Deck successfully recorded.</font></b>';
                });
 */
+
+               if (deckID == '') {
+                  deckID = 'unknown';
+               }
+
                // Success.
                addDeckResultArea.innerHTML = '<b><font color="#00AA00">Success.</font></b>';
-               scriptOutputArea.innerHTML = deckName + '~' + factionString + "~" + outputAString + "~" + outputBString + "~" + outputCString + "~" + deckDescription;
+               scriptOutputArea.innerHTML = + deckID '~' + deckName + '~' + factionString + "~" + outputAString + "~" + outputBString + "~" + outputCString + "~" + deckDescription;
             }
          }
          else {
