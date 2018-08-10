@@ -30,8 +30,8 @@ function getDeckNamesFull() {
          newInnerHTML = '';
 
          for (deckIndex = (response.result.values.length - 1); deckIndex >= 0; deckIndex--) {
-            checkDeckName = response.result.values[deckIndex][0];
-            newInnerHTML += checkDeckName;
+            deckName = response.result.values[deckIndex][0];
+            newInnerHTML += deckName;
             newInnerHTML += '<br/>\n';
          }
 
