@@ -38,7 +38,9 @@ function getDeckListsFull() {
             if (deckIndex != (response.result.values.length - 1)) {
                newInnerHTML += ',\n';
             }
-            newInnerHTML += '  { deckString = "';
+            newInnerHTML += '  { deckName = "';
+            newInnerHTML += deckName.replace(/"/g, "\\\"");
+            newInnerHTML += '", deckString = "';
             newInnerHTML += deckName.replace(/"/g, "\\\"");
             newInnerHTML += '~';
             newInnerHTML += deckFactions;
