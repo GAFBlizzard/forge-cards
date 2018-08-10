@@ -43,8 +43,8 @@ function checkIfDeckExists(addDeckMode) {
    newInnerHTML = '';
 
    // Remove starting and ending whitespace.
-   deckName = untrimmeDdeckName.trim();
-   deckID = untrimmeDdeckID.trim();
+   deckName = untrimmedDeckName.trim();
+   deckID = untrimmedDeckID.trim();
 
    if (addDeckMode) {
       resultArea = addDeckResultArea;
