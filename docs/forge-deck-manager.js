@@ -37,10 +37,14 @@ function setButtonsEnabled(shouldBeEnabled) {
 }
 
 function checkIfDeckExists(addDeckMode) {
-   deckID = deckIDInput.value;
-   deckName = deckNameInput.value;
+   untrimmedDeckID = deckIDInput.value;
+   untrimmedDeckName = deckNameInput.value;
    addDeckFullPending = false;
    newInnerHTML = '';
+
+   // Remove starting and ending whitespace.
+   deckName = untrimmeDdeckName.trim();
+   deckID = untrimmeDdeckID.trim();
 
    if (addDeckMode) {
       resultArea = addDeckResultArea;
