@@ -31,6 +31,8 @@ function getDeckNamesFull() {
 
          for (deckIndex = (response.result.values.length - 1); deckIndex >= 0; deckIndex--) {
             deckName = response.result.values[deckIndex][0];
+            newInnerHTML += (deckIndex + 1);
+            newInnerHTML += '.&nbsp;&nbsp;&nbsp;';
             newInnerHTML += deckName;
             newInnerHTML += '<br/>\n';
          }
