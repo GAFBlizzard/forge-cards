@@ -29,13 +29,13 @@ function getDeckListsFull() {
       }).then((response) => {
          newInnerHTML = 'deckData = {\n';
 
-         for (deckIndex = (response.result.values.length - 1); deckIndex >= 0; deckIndex--) {
+         for (deckIndex = 0; deckIndex < response.result.values.length; deckIndex++) {
             deckName = response.result.values[deckIndex][0];
             deckFactions = response.result.values[deckIndex][1];
             deckCardsA = response.result.values[deckIndex][2];
             deckCardsB = response.result.values[deckIndex][3];
             deckCardsC = response.result.values[deckIndex][4];
-            if (deckIndex != (response.result.values.length - 1)) {
+            if (deckIndex != 0) {
                newInnerHTML += ',\n';
             }
             newInnerHTML += '  { deckName = "';
